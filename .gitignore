@@ -40,5 +40,5 @@ next-env.d.ts
 .yarn/install-state.gz
 
 # IDEs
-.vscode/*
-.idea/*
+.vscode
+.idea
