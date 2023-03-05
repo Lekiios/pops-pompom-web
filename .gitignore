@@ -38,3 +38,7 @@ next-env.d.ts
 # yarn
 .yarn/cache/*
 .yarn/install-state.gz
+
+# IDEs
+.vscode
+.idea

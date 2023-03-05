@@ -884,15 +884,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-google@npm:^0.14.0":
-  version: 0.14.0
-  resolution: "eslint-config-google@npm:0.14.0"
-  peerDependencies:
-    eslint: ">=5.16.0"
-  checksum: 52ad84c0df2d33703024e5b7fd73a9a1b2a87413d25cee1826c891b3f8fba89f9188f3c5ed6d57b4315851c6a3c82847cc9f6c747278bf4395341f9ad79ed0d0
-  languageName: node
-  linkType: hard
-
 "eslint-config-next@npm:13.2.3":
   version: 13.2.3
   resolution: "eslint-config-next@npm:13.2.3"
@@ -1016,6 +1007,13 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
   checksum: f166dd5fe7257c7b891c6692e6a3ede6f237a14043ae3d97581daf318fc5833ddc6b4871aa34ab7656187430170500f6d806895747ea17ecdf8231a666c3c2fd
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-next@npm:^0.0.0":
+  version: 0.0.0
+  resolution: "eslint-plugin-next@npm:0.0.0"
+  checksum: c083aa1c42df347d7940b07916493c0be6f30c5df9c87200827f71c574958d3e1362e1042fd15f9164e63b673cb7ca94491ea3e8318fc1dcbe4f686e9d9166d5
   languageName: node
   linkType: hard
 
@@ -2293,9 +2291,9 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.54.0
     "@typescript-eslint/parser": ^5.54.0
     eslint: 8.35.0
-    eslint-config-google: ^0.14.0
     eslint-config-next: 13.2.3
     eslint-config-prettier: ^8.6.0
+    eslint-plugin-next: ^0.0.0
     eslint-plugin-react: ^7.32.2
     next: 13.2.3
     prettier: ^2.8.4
