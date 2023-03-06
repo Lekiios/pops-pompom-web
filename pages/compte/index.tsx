@@ -1,9 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../../styles/Home.module.css";
+import React, { CSSProperties } from "react";
 
 export interface StyleSheet {
-  [key: string]: React.CSSProperties;
+  [key: string]: CSSProperties;
 }
 
 export const style: StyleSheet = {
@@ -19,10 +18,10 @@ let anci = "8 ans";
 let desc = "Je suis celui qui fait les musiques :sunglasses:";
 
 export default function Gallerie() {
-  var identiteGoogle = idGoogle;
-  var filiere = fili;
-  var anciennete = anci;
-  var description = desc;
+  let identiteGoogle = idGoogle;
+  let filiere = fili;
+  let anciennete = anci;
+  let description = desc;
   return (
     <div>
       <Head>

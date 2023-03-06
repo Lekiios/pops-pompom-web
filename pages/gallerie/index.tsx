@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../../styles/Home.module.css";
+import React from "react";
 
 export interface StyleSheet {
   [key: string]: React.CSSProperties;
@@ -18,9 +17,9 @@ let ev2 = "Nom évènement 2";
 let ev3 = "Nom évènement 3";
 
 export default function Gallerie() {
-  var evenement1 = ev1;
-  var evenement2 = ev2;
-  var evenement3 = ev3;
+  let evenement1 = ev1;
+  let evenement2 = ev2;
+  let evenement3 = ev3;
   return (
     <div>
       <Head>

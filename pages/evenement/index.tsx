@@ -1,9 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../../styles/Home.module.css";
+import React, { CSSProperties } from "react";
 
 export interface StyleSheet {
-  [key: string]: React.CSSProperties;
+  [key: string]: CSSProperties;
 }
 
 export const style: StyleSheet = {
@@ -24,13 +23,10 @@ export default function Gallerie() {
       <main className="evenementMain">
         <div className="evenementHaut">
           <div className="evenementHautDetails">
-            <div className="evenementHautDetailsNom">{nom}</div>
-            <div className="evenementHautDetailsDate">{date}</div>
-            <div className="evenementHautDetailsHeure">{heure}</div>
-            <div className="evenementHautDetailsLieu">{lieu}</div>
+            <div className="evenementHautDetailsNom">{}</div>
+
           </div>
           <div className="evenementHautBouton">
-            {JyVaisOuPas}
             <h3>Caroussel 2</h3>
           </div>
         </div>
