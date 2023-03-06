@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
 import styles from "../../styles/Home.module.css";
 
 export interface StyleSheet {
@@ -13,14 +14,10 @@ export const style: StyleSheet = {
   },
 };
 
-let ev1 = "Nom évènement 1";
-let ev2 = "Nom évènement 2";
-let ev3 = "Nom évènement 3";
-
 export default function Gallerie() {
-  var evenement1 = ev1;
-  var evenement2 = ev2;
-  var evenement3 = ev3;
+  const [evenement1, setEvenement1] = useState(0);
+  const [evenement2, setEvenement2] = useState(0);
+  const [evenement3, setEvenement3] = useState(0);
   return (
     <div>
       <Head>
