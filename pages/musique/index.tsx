@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../../styles/Home.module.css";
+import React from "react";
 
 export interface StyleSheet {
   [key: string]: React.CSSProperties;
@@ -13,7 +13,7 @@ export const style: StyleSheet = {
   },
 };
 
-export default function Gallerie() {
+export default function Musique() {
   return (
     <div className={styles.container}>
       <Head>

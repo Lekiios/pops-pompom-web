@@ -1,9 +1,8 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../../styles/Home.module.css";
+import React, { CSSProperties, useState } from "react";
 
 export interface StyleSheet {
-  [key: string]: React.CSSProperties;
+  [key: string]: CSSProperties;
 }
 
 export const style: StyleSheet = {
@@ -13,16 +12,13 @@ export const style: StyleSheet = {
   },
 };
 
-let idGoogle = "Maxime Le Bot";
-let fili = "APP3 Info";
-let anci = "8 ans";
-let desc = "Je suis celui qui fait les musiques :sunglasses:";
-
-export default function Gallerie() {
-  var identiteGoogle = idGoogle;
-  var filiere = fili;
-  var anciennete = anci;
-  var description = desc;
+export default function Compte() {
+  const [idGoogle, setId] = useState<string>("Maxime Le Bot");
+  const [filiere, setFiliere] = useState<string>("APP3 Info");
+  const [description, setDesc] = useState<string>("8 ans");
+  const [anciennete, setAnciennete] = useState<string>(
+    "Je suis celui qui fait les musiques :sunglasses:"
+  );
   return (
     <div>
       <Head>
@@ -35,7 +31,7 @@ export default function Gallerie() {
           <div className="comptePersonneGroupe">
             <div className="comptePersonneIdentite">
               <div className="comptePersonneIdentiteGoogle">
-                <h3>{identiteGoogle}</h3>
+                <h3>{idGoogle}</h3>
               </div>
               <div className="comptePersonneIdentitePlus">
                 <div className="comptePersonneIdentitePlusFilière">

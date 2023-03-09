@@ -1,10 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 
-function NavLink({ to, clas, children }) {
+export interface INavLinkProps{
+  to: string;
+  clas?: string;
+  children?: string[];
+}
+function NavLink({ to, clas, children }: INavLinkProps) {
   return (
-    <a href={to} className={clas}>
+    <Link href={to} className={clas}>
       {children}
-    </a>
+    </Link>
   );
 }
 /*
@@ -55,14 +61,14 @@ function MobileNav({ open, setOpen }) {
 let connexionString = "Compte";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  var connexion = connexionString;
+  let connexion = connexionString;
   return (
     <nav>
-      <div class="navigationBar">
-        <a href="." class="navigationLogo">
+      <div className="navigationBar">
+        <a href="." className="navigationLogo">
           LOGO{" "}
         </a>
-        <div class="navigationChild">
+        <div className="navigationChild">
           <NavLink to="." clas="navigationLink">
             Accueil{" "}
           </NavLink>
@@ -76,7 +82,7 @@ export default function Navbar() {
             Musiques{" "}
           </NavLink>
         </div>
-        <div class="navigationCompte">
+        <div className="navigationCompte">
           <NavLink to="./compte">{connexion} </NavLink>
         </div>
       </div>

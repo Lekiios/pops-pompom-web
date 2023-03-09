@@ -14,6 +14,13 @@
 .navigationCompte {
   color: #f27a09;
 }
+
+/*///////////////*/
+
+/*///////////////*/
+
+/*///////////////*/
+
 .gallerieMain {
   width: 100%;
   display: flex;
@@ -45,6 +52,12 @@
 .gallerieBestOfImage {
   color: #f27a09;
 }
+
+/*///////////////*/
+
+/*///////////////*/
+
+/*///////////////*/
 
 .compteMain {
   width: 100%;
@@ -109,6 +122,65 @@
 .compteAdmin {
   margin-top: 5%;
   flex: 3;
+}
+
+/*///////////////*/
+
+/*///////////////*/
+
+/*///////////////*/
+
+.evenementMain {
+  display: flex;
+  flex-direction: column;
+}
+
+.evenementHaut {
+  display: flex;
+  flex: 1;
+}
+
+.evenementHautDetails {
+  flex: 2;
+}
+
+.evenementHautDetailsNom {
+}
+
+.evenementHautDetailsDate {
+}
+
+.evenementHautDetailsHeure {
+}
+
+.evenementHautDetailsLieu {
+}
+
+.evenementHautBouton {
+  flex: 1;
+}
+
+.evenementBas {
+  display: flex;
+  flex: 1;
+}
+
+.evenementBasAutre {
+}
+
+.evenementBasAutreDescription {
+}
+
+.evenementBasAutreMateriel {
+}
+
+.evenementBasAutreChoree {
+}
+
+.evenementBasAutreMeteo {
+}
+
+.evenementBasPhoto {
 }
 
 /*///////////////*/
