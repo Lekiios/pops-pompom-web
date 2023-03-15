@@ -1,5 +1,4 @@
 import Head from "next/head";
-import React, { CSSProperties } from "react";
 import { Layout } from "../../components/Layout";
 import React, { CSSProperties, useState } from "react";
 export interface StyleSheet {
