@@ -45,7 +45,7 @@ export default function Evenement() {
     "Tenue complète, chaussures d'intérieur, noires de préférence, un des tapis mince, les pompons"
   );
   return (
-    <Layout>
+    <Layout underConstruct>
       <Head>
         <title>Pompom4Ever</title>
         <meta name="description" content="On adore Next.js" />

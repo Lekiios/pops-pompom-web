@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "../../prisma/client";
 import { UserProps } from "../../models/UserModel";
+import bcrypt from "bcrypt";
 
 export default async function getUser(
   req: NextApiRequest,
@@ -12,12 +13,13 @@ export default async function getUser(
     // Check email already used
     if (req.method === "POST") {
       try {
+        const password = await bcrypt.hash(user.password, 10);
         const data = await prisma.pompom_users.create({
           data: {
             email: user.email,
             firstName: user.firstName,
             lastName: user.lastName,
-            password: user.password,
+            password,
           },
         });
         res.status(200).json(data);

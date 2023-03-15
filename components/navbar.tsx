@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { Button, Flex } from "@mantine/core";
-import { signIn } from "next-auth/react";
-
-export interface INavLinkProps {
-  to: string;
-  clas?: string;
-  children?: string[];
-}
+import { Button, Flex, Paper } from "@mantine/core";
+import { signOut, useSession } from "next-auth/react";
+import {
+  IconHome,
+  IconCalendarEvent,
+  IconPhoto,
+  IconMusic,
+} from "@tabler/icons-react";
+import Image from "next/image";
+import { useRouter } from "next/router";
 /*
 function MobileNav({ open, setOpen }) {
   return (
@@ -53,38 +55,119 @@ function MobileNav({ open, setOpen }) {
   );
 }
 */
-let connexionString = "Compte";
+
+interface INavLinkProps {
+  url: string;
+  title: string;
+  icon: JSX.Element;
+}
+const NavLink = ({ url, title, icon }: INavLinkProps) => {
+  return (
+    <Link
+      style={{
+        display: "flex",
+        alignItems: "end",
+        gap: 5,
+        color: "whitesmoke",
+        fontWeight: "bold",
+      }}
+      href={url}
+    >
+      {icon}
+      {title.toUpperCase()}
+    </Link>
+  );
+};
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  let connexion = connexionString;
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
   return (
-    <nav
-      className="navigationBar"
-      style={{ padding: 10, height: "100%", width: "100%" }}
+    <Paper
+      shadow={"md"}
+      radius={"xs"}
+      sx={(theme) => ({
+        backgroundImage: theme.fn.gradient({
+          from: "pink.4",
+          to: "red.4",
+          deg: 45,
+        }),
+      })}
+      style={{
+        color: "white",
+        padding: 15,
+        paddingInline: "10%",
+        alignItems: "center",
+        justifyContent: "center",
+        display: "flex",
+        height: "100%",
+        width: "100%",
+      }}
     >
-      <Flex style={{ flex: 2 }}>
-        <Link href="/" className="navigationLogo">
-          LOGO{" "}
+      <Flex style={{ flex: 1 }}>
+        <Link href="/">
+          <Image
+            priority
+            src={"/pompom_logo.png"}
+            width={60}
+            height={60}
+            alt="pompomPopsLogo"
+          />
         </Link>
       </Flex>
       <Flex
-        justify={"space-evenly"}
+        gap={20}
         align={"center"}
-        style={{ flex: 5, color: "#0070f3" }}
+        style={{ flex: 16, color: "#0070f3", marginLeft: 15 }}
       >
-        <Link href="/">Accueil </Link>
-        <Link href="/evenement">Évènements </Link>
-        <Link href="/gallerie">Gallerie </Link>
-        <Link href="/musique">Musiques </Link>
+        <NavLink url={"/"} title={"accueil"} icon={<IconHome />} />
+        <NavLink
+          url={"/evenements"}
+          title={"evenements"}
+          icon={<IconCalendarEvent />}
+        />
+        <NavLink url={"/gallerie"} title={"galerie"} icon={<IconPhoto />} />
+        <NavLink url={"/musique"} title={"musique"} icon={<IconMusic />} />
       </Flex>
       <Flex
         justify={"right"}
         align={"center"}
-        style={{ flex: 2, color: "#f27a09" }}
+        style={{ flex: 8, color: "#f27a09" }}
       >
-        <Link href={"/auth/signin"}>Connexion</Link>
-        <Link href="/compte">{connexion} </Link>
+        {status === "authenticated" ? (
+          <Flex align={"center"} justify={"right"} gap={20}>
+            <Button
+              variant={"gradient"}
+              gradient={{ from: "gray.6", to: "gray.5", deg: 90 }}
+              size={"md"}
+            >
+              <Link href="/compte">COMPTE</Link>
+            </Button>
+            {router.pathname !== "/compte" ? (
+              <Button
+                variant={"gradient"}
+                gradient={{ from: "gray.5", to: "gray.6", deg: 90 }}
+                onClick={() => signOut({ redirect: false })}
+                size={"md"}
+              >
+                DECONNEXION
+              </Button>
+            ) : (
+              <></>
+            )}
+          </Flex>
+        ) : (
+          <Button
+            variant={"gradient"}
+            gradient={{ from: "gray.5", to: "gray.6", deg: 90 }}
+            size={"md"}
+          >
+            <Link href={"/auth/signin"}>CONNEXION</Link>
+          </Button>
+        )}
       </Flex>
-    </nav>
+    </Paper>
   );
 }

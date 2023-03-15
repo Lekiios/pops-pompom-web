@@ -1,5 +1,4 @@
 import { UserProps } from "../models/UserModel";
-
 export const getUserData = async (email: string) => {
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/getUser`, {
     method: "POST",

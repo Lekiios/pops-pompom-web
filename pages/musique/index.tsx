@@ -48,7 +48,7 @@ let musicList = [mus1];
 export default function Musique() {
   const [listeMusique, setListeMusique] = useState(musicList);
   return (
-    <Layout>
+    <Layout underConstruct>
       <Head>
         <title>Pompom4Ever</title>
         <meta name="description" content="On adore Next.js" />à

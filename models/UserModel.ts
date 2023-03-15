@@ -7,4 +7,7 @@ export interface UserProps {
 
 export interface User extends UserProps {
   id: number;
+  description?: string;
+  old?: number;
+  class?: string;
 }

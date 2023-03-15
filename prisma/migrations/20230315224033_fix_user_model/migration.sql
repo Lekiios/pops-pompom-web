@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "pompom_users" ALTER COLUMN "class" DROP NOT NULL,
+ALTER COLUMN "description" DROP NOT NULL,
+ALTER COLUMN "old" DROP NOT NULL;

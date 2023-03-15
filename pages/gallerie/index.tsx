@@ -18,7 +18,7 @@ export default function Gallerie() {
   const [evenement2, setEvenement2] = useState<string>("RDD 2022");
   const [evenement3, setEvenement3] = useState<string>("RDD 2021");
   return (
-    <Layout>
+    <Layout underConstruct>
       <Head>
         <title>Pompom4Ever</title>
         <meta name="description" content="On adore Next.js" />
