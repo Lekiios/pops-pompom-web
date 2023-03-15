@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React, { CSSProperties, useState } from "react";
-
 export interface StyleSheet {
   [key: string]: CSSProperties;
 }

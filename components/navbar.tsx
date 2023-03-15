@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-export interface INavLinkProps{
+export interface INavLinkProps {
   to: string;
   clas?: string;
   children?: string[];
@@ -65,14 +65,14 @@ export default function Navbar() {
   return (
     <nav>
       <div className="navigationBar">
-        <a href="." className="navigationLogo">
+        <Link href="." className="navigationLogo">
           LOGO{" "}
-        </a>
+        </Link>
         <div className="navigationChild">
           <NavLink to="." clas="navigationLink">
             Accueil{" "}
           </NavLink>
-          <NavLink to="./evenement" clas="navigationLink">
+          <NavLink to="./evenements" clas="navigationLink">
             Évènements{" "}
           </NavLink>
           <NavLink to="./gallerie" clas="navigationLink">

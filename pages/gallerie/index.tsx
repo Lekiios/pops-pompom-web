@@ -13,9 +13,9 @@ export const style: StyleSheet = {
 };
 
 export default function Gallerie() {
-  const [evenement1, setEvenement1] = useState(0);
-  const [evenement2, setEvenement2] = useState(0);
-  const [evenement3, setEvenement3] = useState(0);
+  const [evenement1, setEvenement1] = useState<string>("RDD 2023");
+  const [evenement2, setEvenement2] = useState<string>("RDD 2022");
+  const [evenement3, setEvenement3] = useState<string>("RDD 2021");
   return (
     <div>
       <Head>
@@ -27,15 +27,21 @@ export default function Gallerie() {
         <div className="gallerieCaroussels">
           <div className="gallerieCaroussel">
             {evenement1}
-            <h3>Caroussel 1</h3>
+            <a href="./gallerieEvenement">
+              <h3>Caroussel 1</h3>
+            </a>
           </div>
           <div className="gallerieCaroussel">
             {evenement2}
-            <h3>Caroussel 2</h3>
+            <a href="./gallerieEvenement">
+              <h3>Caroussel 2</h3>
+            </a>
           </div>
           <div className="gallerieCaroussel">
             {evenement3}
-            <h3>Caroussel 3</h3>
+            <a href="./gallerieEvenement">
+              <h3>Caroussel 3</h3>
+            </a>
           </div>
         </div>
         <div className="gallerieBestOf">

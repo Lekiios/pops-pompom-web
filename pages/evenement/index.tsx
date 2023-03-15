@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "../../styles/Home.module.css";
 import React, { CSSProperties } from "react";
+import { Button } from "@mantine/core";
 
 export interface StyleSheet {
   [key: string]: CSSProperties;
@@ -16,25 +17,32 @@ export const style: StyleSheet = {
 };
 
 export default function Evenement() {
-  let varDate = new Date("2023-04-25");
+  let varDate = new Date("2023-03-25");
   let stringMonth =
     (varDate.getMonth().toString().length == 1 ? "0" : "") +
-    varDate.getMonth().toString();
+    (varDate.getMonth() + 1).toString();
   let stringDate =
     (varDate.getDate().toString().length == 1 ? "0" : "") +
     varDate.getDate().toString();
-  const [nom, setNom] = useState<string>("Maxime");
+  const [nom, setNom] = useState<string>(
+    "RDD 2023, sur Free From fait l'avion"
+  );
   const [date, setDate] = useState<string>(
-    varDate.getFullYear().toString() + "-" + stringDate + "-" + stringMonth
+    stringDate + "-" + stringMonth + "-" + varDate.getFullYear().toString()
   );
   const [heure, setHeure] = useState<string>("16h-18h");
   const [lieu, setLieu] = useState<string>("Opéra Longjumeau");
   const [going, setGoing] = useState(false);
-  const evenementDate =
-    varDate.getFullYear().toString() + "-" + stringDate + "-" + stringMonth;
-  useEffect(() => {
-    setDate(evenementDate);
-  }, [evenementDate]);
+  const [description, setDescription] = useState("Exemple description");
+  const [meteo, setMeteo] = useState(
+    "Annoncé pluvieux, mais on est en intérieur"
+  );
+  const [chorees, setChorees] = useState(
+    "Make U Move, Helikopter, chorée Tigresses et chorée 1/chorée Derby"
+  );
+  const [materiel, setMateriel] = useState(
+    "Tenue complète, chaussures d'intérieur, noires de préférence, un des tapis mince, les pompons"
+  );
   return (
     <div>
       <Head>
@@ -46,30 +54,42 @@ export default function Evenement() {
         <div className="evenementHaut">
           <div className="evenementHautDetails">
             <div className="evenementHautDetailsNom">{nom}</div>
-            <div className="evenementHautDetailsDate">{date}</div>
-            <div className="evenementHautDetailsHeure">{heure}</div>
-            <div className="evenementHautDetailsLieu">{lieu}</div>
+            <div className="evenementHautDetailsBas">
+              <div className="evenementHautDetailsBasDate">{date}</div>
+              <div className="evenementHautDetailsBasHeure">{heure}</div>
+              <div className="evenementHautDetailsBasLieu">{lieu}</div>
+            </div>
           </div>
           <div className="evenementHautBouton">
-            <button onClick={() => setGoing(!going)}>
+            <Button
+              miw={"120px"}
+              type="submit"
+              variant={"gradient"}
+              gradient={{ from: "red", to: "blue", deg: 90 }}
+              onClick={() => setGoing(!going)}
+            >
               {going ? "J'y vais" : "J'y vais pas"}
-            </button>
+            </Button>
           </div>
         </div>
         <div className="evenementBas">
           <div className="evenementBasAutre">
             <div className="evenementBasAutreDescription">
-              Exemple de description
+              Description :<h5>{description}</h5>
             </div>
             <div className="evenementBasAutreMateriel">
-              Exemple de matériel à prendre
+              Matériel à prendre :<h5>{materiel}</h5>
             </div>
             <div className="evenementBasAutreChoree">
-              Exemple de chorée(s) à préparer
+              Chorée(s) à préparer :<h5>{chorees}</h5>
             </div>
-            <div className="evenementBasAutreMeteo">Exemple de Meteo</div>
+            <div className="evenementBasAutreMeteo">
+              Météo :<h5>{meteo}</h5>
+            </div>
           </div>
-          <div className="evenementBasPhoto">Exemple de photo</div>
+          <a href="./gallerieEvenement">
+            <div className="evenementBasPhoto">Photos du lieu</div>
+          </a>
         </div>
       </main>
     </div>
