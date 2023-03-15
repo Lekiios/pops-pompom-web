@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "../../styles/Home.module.css";
 import React, { CSSProperties } from "react";
 import { Button } from "@mantine/core";
+import Link from "next/link";
 
 export interface StyleSheet {
   [key: string]: CSSProperties;
@@ -28,52 +29,52 @@ export default function Evenements() {
         <div className="evenementsInternes">
           <h2>Liste des évènements internes à venir</h2>
           <div className="evenementsInternesImages">
-            <a className="evenementsImagesExemple" href="./evenement">
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 1
-            </a>
-            <a className="evenementsImagesExemple" href="./evenement">
+            </Link>
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 2
-            </a>
-            <a className="evenementsImagesExemple" href="./evenement">
+            </Link>
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 3
-            </a>
-            <a className="evenementsImagesExemple" href="./evenement">
+            </Link>
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 4
-            </a>
+            </Link>
           </div>
         </div>
         <div className="evenementsExternes">
           <h2>Liste des évènements externes à venir</h2>
           <div className="evenementsExternesImages">
-            <a className="evenementsImagesExemple" href="./evenement">
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 1
-            </a>
-            <a className="evenementsImagesExemple" href="./evenement">
+            </Link>
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 2
-            </a>
-            <a className="evenementsImagesExemple" href="./evenement">
+            </Link>
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 3
-            </a>
-            <a className="evenementsImagesExemple" href="./evenement">
+            </Link>
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 4
-            </a>
+            </Link>
           </div>
         </div>
         <div className="evenementsPasses">
           <h2>Liste des évènements passés</h2>
           <div className="evenementsPassesImages">
-            <a className="evenementsImagesExemple" href="./evenement">
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 1
-            </a>
-            <a className="evenementsImagesExemple" href="./evenement">
+            </Link>
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 2
-            </a>
-            <a className="evenementsImagesExemple" href="./evenement">
+            </Link>
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 3
-            </a>
-            <a className="evenementsImagesExemple" href="./evenement">
+            </Link>
+            <Link className="evenementsImagesExemple" href="./evenement">
               Exemple 4
-            </a>
+            </Link>
           </div>
         </div>
       </main>

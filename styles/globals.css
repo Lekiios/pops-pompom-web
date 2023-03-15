@@ -9,11 +9,13 @@ body,
 .navigationBar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 .navigationChild {
+  flex: 5;
   color: #0070f3;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .navigationLink {
   color: #0070f3;
@@ -309,15 +311,4 @@ navbarButtons {
   display: flex;
   justify-content: space-evenly;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
+

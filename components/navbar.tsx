@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { Button, Flex } from "@mantine/core";
+import { signIn } from "next-auth/react";
 
 export interface INavLinkProps {
   to: string;
   clas?: string;
   children?: string[];
-}
-function NavLink({ to, clas, children }: INavLinkProps) {
-  return (
-    <Link href={to} className={clas}>
-      {children}
-    </Link>
-  );
 }
 /*
 function MobileNav({ open, setOpen }) {
@@ -63,29 +58,33 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   let connexion = connexionString;
   return (
-    <nav>
-      <div className="navigationBar">
-        <Link href="." className="navigationLogo">
+    <nav
+      className="navigationBar"
+      style={{ padding: 10, height: "100%", width: "100%" }}
+    >
+      <Flex style={{ flex: 2 }}>
+        <Link href="/" className="navigationLogo">
           LOGO{" "}
         </Link>
-        <div className="navigationChild">
-          <NavLink to="." clas="navigationLink">
-            Accueil{" "}
-          </NavLink>
-          <NavLink to="./evenements" clas="navigationLink">
-            Évènements{" "}
-          </NavLink>
-          <NavLink to="./gallerie" clas="navigationLink">
-            Gallerie{" "}
-          </NavLink>
-          <NavLink to="./musique" clas="navigationLink">
-            Musiques{" "}
-          </NavLink>
-        </div>
-        <div className="navigationCompte">
-          <NavLink to="./compte">{connexion} </NavLink>
-        </div>
-      </div>
+      </Flex>
+      <Flex
+        justify={"space-evenly"}
+        align={"center"}
+        style={{ flex: 5, color: "#0070f3" }}
+      >
+        <Link href="/">Accueil </Link>
+        <Link href="/evenement">Évènements </Link>
+        <Link href="/gallerie">Gallerie </Link>
+        <Link href="/musique">Musiques </Link>
+      </Flex>
+      <Flex
+        justify={"right"}
+        align={"center"}
+        style={{ flex: 2, color: "#f27a09" }}
+      >
+        <Link href={"/auth/signin"}>Connexion</Link>
+        <Link href="/compte">{connexion} </Link>
+      </Flex>
     </nav>
   );
 }

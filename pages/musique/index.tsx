@@ -1,7 +1,7 @@
 import Head from "next/head";
-import styles from "../../styles/Home.module.css";
 import React, { useState } from "react";
-import { ListItem } from "@mantine/core/lib/List/ListItem/ListItem";
+import { Flex } from "@mantine/core";
+import { Layout } from "../../components/Layout";
 
 export interface StyleSheet {
   [key: string]: React.CSSProperties;
@@ -15,12 +15,12 @@ export const style: StyleSheet = {
 };
 
 interface IMusicProps {
-  lien: String;
-  nom: String;
-  personne: String;
-  date: String;
+  lien: string;
+  nom: string;
+  personne: string;
+  date: string;
   vote: number;
-  description: String;
+  description: string;
 }
 
 function Music({ lien, nom, personne, date, vote, description }: IMusicProps) {
@@ -34,21 +34,21 @@ function Music({ lien, nom, personne, date, vote, description }: IMusicProps) {
   );
 }
 
-let mus1 = [
-  "https://www.youtube.com/watch?v=VrY39ooSKBY",
-  "Alejandro - Lady Gaga",
-  "Maxime",
-  "15-03-2023",
-  2,
-  "Ce serait très stylé",
-];
+let mus1: IMusicProps = {
+  lien: "https://www.youtube.com/watch?v=VrY39ooSKBY",
+  nom: "Alejandro - Lady Gaga",
+  personne: "Maxime",
+  date: "15-03-2023",
+  vote: 2,
+  description: "Ce serait très stylé",
+};
 
 let musicList = [mus1];
 
 export default function Musique() {
   const [listeMusique, setListeMusique] = useState(musicList);
   return (
-    <div className={styles.container}>
+    <Layout>
       <Head>
         <title>Pompom4Ever</title>
         <meta name="description" content="On adore Next.js" />à
@@ -56,11 +56,11 @@ export default function Musique() {
       </Head>
       <div className="musiqueMain">
         <div className="musiqueListe">
-          {listeMusique.map((item) => (
-            <ListItem key={item.key}>
-              <h1>{item.title}</h1>
-              <p>{item.content}</p>
-            </ListItem>
+          {listeMusique.map((item: IMusicProps, key) => (
+            <Flex key={key}>
+              <h1>{item.nom}</h1>
+              <p>{item.description}</p>
+            </Flex>
           ))}
         </div>
         <div className="musiqueDroite">
@@ -68,6 +68,6 @@ export default function Musique() {
           <div className="musiqueDroiteListe"></div>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }

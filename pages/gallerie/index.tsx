@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React, { useState } from "react";
+import { Layout } from "../../components/Layout";
 
 export interface StyleSheet {
   [key: string]: React.CSSProperties;
@@ -17,7 +18,7 @@ export default function Gallerie() {
   const [evenement2, setEvenement2] = useState<string>("RDD 2022");
   const [evenement3, setEvenement3] = useState<string>("RDD 2021");
   return (
-    <div>
+    <Layout>
       <Head>
         <title>Pompom4Ever</title>
         <meta name="description" content="On adore Next.js" />
@@ -64,6 +65,6 @@ export default function Gallerie() {
           </div>
         </div>
       </main>
-    </div>
+    </Layout>
   );
 }

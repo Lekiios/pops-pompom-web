@@ -1,4 +1,6 @@
 import Head from "next/head";
+import React, { CSSProperties } from "react";
+import { Layout } from "../../components/Layout";
 import React, { CSSProperties, useState } from "react";
 export interface StyleSheet {
   [key: string]: CSSProperties;
@@ -19,7 +21,7 @@ export default function Compte() {
     "Je suis celui qui fait les musiques :sunglasses:"
   );
   return (
-    <div>
+    <Layout>
       <Head>
         <title>Pompom4Ever</title>
         <meta name="description" content="On adore Next.js" />à
@@ -66,6 +68,6 @@ export default function Compte() {
           </div>
         </div>
       </main>
-    </div>
+    </Layout>
   );
 }

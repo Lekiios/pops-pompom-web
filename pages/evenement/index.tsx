@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "../../styles/Home.module.css";
 import React, { CSSProperties } from "react";
 import { Button } from "@mantine/core";
+import { Layout } from "../../components/Layout";
 
 export interface StyleSheet {
   [key: string]: CSSProperties;
@@ -44,7 +45,7 @@ export default function Evenement() {
     "Tenue complète, chaussures d'intérieur, noires de préférence, un des tapis mince, les pompons"
   );
   return (
-    <div>
+    <Layout>
       <Head>
         <title>Pompom4Ever</title>
         <meta name="description" content="On adore Next.js" />
@@ -92,6 +93,6 @@ export default function Evenement() {
           </a>
         </div>
       </main>
-    </div>
+    </Layout>
   );
 }

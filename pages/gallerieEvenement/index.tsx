@@ -1,5 +1,5 @@
-import Head from "next/head";
 import React, { useState } from "react";
+import { Layout } from "../../components/Layout";
 
 export interface StyleSheet {
   [key: string]: React.CSSProperties;
@@ -17,12 +17,7 @@ export default function GallerieEvenement() {
     "RDD 2023, sur Free From fait l'avion"
   );
   return (
-    <div>
-      <Head>
-        <title>Pompom4Ever</title>
-        <meta name="description" content="On adore Next.js" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout>
       <main className="gallerieEvenementMain">
         <div className="gallerieEvenementGauche">
           <h1 className="gallerieEvenementGaucheTitre">{nom}</h1>
@@ -34,6 +29,6 @@ export default function GallerieEvenement() {
           <h1>Exemple Liste</h1>
         </div>
       </main>
-    </div>
+    </Layout>
   );
 }
