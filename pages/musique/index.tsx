@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { useState } from "react";
-import { Flex } from "@mantine/core";
+import { Button, Flex } from "@mantine/core";
 import { Layout } from "../../components/Layout";
 import Link from "next/link";
 
@@ -84,16 +84,23 @@ export default function Musique() {
         </div>
         <div className="musiqueDroite">
           <div className="musiqueDroiteBouton">
-            <button className="musiqueDroiteBoutonStyle">
+            <Button
+              miw={"120px"}
+              type="submit"
+              variant={"gradient"}
+              gradient={{ from: "red", to: "blue", deg: 90 }}
+            >
               Ajouter une musique
-            </button>
+            </Button>
           </div>
-          Liste des musiques des pompoms :
+          <div className="musiqueDroiteTitre">
+            <h3>Liste des musiques des pompoms :</h3>
+          </div>
           <div className="musiqueDroiteListe">
             {listeMusique.map((item: IMusicChoosenProps, key) => (
               <Flex key={key} className="musiqueListeObjet">
                 <Link href={item.lien}>
-                  <h3 className="musiqueListeObjetTitre">{item.nom}</h3>
+                  <h4 className="musiqueListeObjetTitre">{item.nom}</h4>
                 </Link>
               </Flex>
             ))}

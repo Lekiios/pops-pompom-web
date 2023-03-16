@@ -18,7 +18,7 @@ export const style: StyleSheet = {
 };
 
 export default function Evenement() {
-  let varDate = new Date("2023-03-25");
+  let varDate = new Date("2023-10-25");
   let stringMonth =
     (varDate.getMonth().toString().length == 1 ? "0" : "") +
     (varDate.getMonth() + 1).toString();
@@ -34,7 +34,9 @@ export default function Evenement() {
   const [heure, setHeure] = useState<string>("16h-18h");
   const [lieu, setLieu] = useState<string>("Opéra Longjumeau");
   const [going, setGoing] = useState(false);
-  const [description, setDescription] = useState("Exemple description");
+  const [description, setDescription] = useState(
+    "Représentation devant les élèves diplomés ET6 et APP6. Représentation en début de cérémonie (16h-17h) et fin de cérémonie 18h-19h. Présence requise dès le matin (9h) pour les préparations de la salle et les répétitions. Le repas de midi est fourni par l'école, et la journée de cours est excusée."
+  );
   const [meteo, setMeteo] = useState(
     "Annoncé pluvieux, mais on est en intérieur"
   );
@@ -76,20 +78,28 @@ export default function Evenement() {
         <div className="evenementBas">
           <div className="evenementBasAutre">
             <div className="evenementBasAutreDescription">
-              Description :<h5>{description}</h5>
+              Description :<p>{description}</p>
             </div>
             <div className="evenementBasAutreMateriel">
-              Matériel à prendre :<h5>{materiel}</h5>
+              Matériel à prendre :<h4>{materiel}</h4>
             </div>
             <div className="evenementBasAutreChoree">
-              Chorée(s) à préparer :<h5>{chorees}</h5>
+              Chorée(s) à préparer :<h4>{chorees}</h4>
             </div>
             <div className="evenementBasAutreMeteo">
-              Météo :<h5>{meteo}</h5>
+              Météo :<h4>{meteo}</h4>
             </div>
           </div>
           <a href="./gallerieEvenement">
-            <div className="evenementBasPhoto">Photos du lieu</div>
+            <div className="evenementBasPhoto">
+              <Image
+                priority
+                src="/remplissageEven2.png"
+                width={400}
+                height={320}
+                alt="theatreDeLongjumeau"
+              />
+            </div>
           </a>
         </div>
       </main>

@@ -28,7 +28,7 @@ body,
 
 /*///////////////*/
 
-/*///////////////*/
+/*/ //////////////*/
 
 /*///////////////*/
 
@@ -56,19 +56,20 @@ body,
   flex: 2;
 }
 .gallerieBestOfLigne {
-  margin-top: 15%;
+  margin-top: 5%;
   display: flex;
   justify-content: space-around;
 }
 .gallerieBestOfImage {
+  margin-left: 1%;
   color: #f27a09;
 }
 
-/*///////////////*/
+/*/ //////////////*/
 
 /*///////////////*/
 
-/*///////////////*/
+/*/ //////////////*/
 
 .compteMain {
   width: 100%;
@@ -137,7 +138,7 @@ body,
 
 /*///////////////*/
 
-/*///////////////*/
+/*/ //////////////*/
 
 /*///////////////*/
 
@@ -185,7 +186,7 @@ body,
 }
 
 .evenementBas {
-  margin-top: 5%;
+  margin-top: 2%;
   display: flex;
   flex: 2;
 }
@@ -216,11 +217,11 @@ body,
   margin-left: 3%;
 }
 
-/*///////////////*/
+/*/ //////////////*/
 
 /*///////////////*/
 
-/*///////////////*/
+/*/ //////////////*/
 
 .evenementsMain {
   margin-top: 5%;
@@ -259,14 +260,154 @@ body,
 }
 
 .evenementsImagesExemple {
-  margin-left: 3%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+}
+
+.evenementsImagesExempleNom {
+}
+
+.evenementsImagesExemple2 {
+  display: flex;
+}
+
+.evenementsImagesExemple2Date {
+}
+
+.evenementsImagesExemple2Lieu {
+  margin-left: 2%;
 }
 
 /*///////////////*/
 
-/*///////////////*/
+/*/ //////////////*/
 
 /*///////////////*/
+
+.accueilImageReseaux {
+  margin-left: 5%;
+  border-radius: 10%;
+}
+
+.accueilMain {
+  margin-top: 5%;
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 100%;
+  display: flex;
+}
+
+.accueilListe{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.accueilListeObjet{
+  display: flex;
+  flex-direction: column;
+}
+
+.accueilListeObjetNom{
+}
+
+.accueilListeObjet2{
+  display: flex;
+}
+
+.accueilListeObjet2Date{
+
+}
+
+.accueilListeObjet2Lieu{
+  margin-left: 2%;
+}
+
+.accueilDroite{
+  display: flex;
+  flex-direction: column;
+  flex: 3;
+}
+
+.accueilDroiteHaut{
+  display: flex;
+  flex: 1;
+}
+
+.accueilDroiteHautReseaux{
+  display: flex;
+  flex: 3;
+  margin-top: 3%;
+  margin-left: 2%;
+}
+
+.accueilDroiteHautReseauxInsta{
+
+}
+
+.accueilDroiteHautReseauxFacebook{
+  margin-left: 2%;
+}
+
+.accueilDroiteHautReseauxYouTube{
+  margin-left: 2%;
+}
+
+.accueilDroiteHautLogo{
+  flex: 2;
+}
+
+.accueilDroiteBas{
+  margin-top: 3%;
+  display: flex;
+  flex: 3;
+}
+
+.accueilDroiteBasEvenements{
+  flex: 3;
+}
+
+.accueilDroiteBasEvenementsPasses{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.accueilDroiteBasEvenementsPassesObjet{
+  margin-left: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+.accueilDroiteBasEvenementsPassesObjetNom{
+  
+}
+
+.accueilDroiteBasEvenementsPassesObjetDate{
+  
+}
+
+.accueilDroiteBasEvenementsPassesObjetLieu{
+  
+}
+
+.accueilDroiteBasVideos{
+  flex: 2;
+}
+
+.accueilDroiteBasVideosObjet{
+  
+}
+
+.accueilDroiteBasVideosObjetNom{
+  
+}
+
+/*/ //////////////*/
+
+/*///////////////*/
+
+/*/ //////////////*/
 
 .gallerieEvenementMain {
   margin-top: 5%;
@@ -277,7 +418,7 @@ body,
 }
 
 .gallerieEvenementGauche {
-  flex: 3;
+  flex: 2;
   display: flex;
   flex-direction: column;
 }
@@ -286,9 +427,16 @@ body,
   flex: 2;
 }
 
+.gallerieEvenementListeLigne {
+  margin-top: 2%;
+  display: flex;
+}
+.gallerieEvenementListeImage {
+  margin-left: 2%;
+}
 /*///////////////*/
 
-/*///////////////*/
+/*/ //////////////*/
 
 /*///////////////*/
 
@@ -343,11 +491,19 @@ body,
   flex-direction: column;
 }
 
-/*///////////////*/
+.musiqueDroiteTitre {
+  margin-top: 5%;
+}
+
+.musiqueDroiteListe {
+
+}
+
+/*/ //////////////*/
 
 /*///////////////*/
 
-/*///////////////*/
+/*/ //////////////*/
 
 html,
 body {

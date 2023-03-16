@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, { useState } from "react";
 import { Layout } from "../../components/Layout";
+import Image from "next/image";
 
 export interface StyleSheet {
   [key: string]: React.CSSProperties;
@@ -49,19 +50,91 @@ export default function Gallerie() {
           {" "}
           BEST OF
           <div className="gallerieBestOfLigne">
-            <h2 className="gallerieBestOfImage">Image 1</h2>
-            <h2 className="gallerieBestOfImage">Image 2</h2>
-            <h2 className="gallerieBestOfImage">Image 3</h2>
+            <div className="gallerieBestOfImage">
+              <Image
+                priority
+                src="/image.png"
+                width={150}
+                height={100}
+                alt="image1"
+              />
+            </div>
+            <div className="gallerieBestOfImage">
+              <Image
+                priority
+                src="/image2.png"
+                width={150}
+                height={100}
+                alt="image2"
+              />
+            </div>
+            <div className="gallerieBestOfImage">
+              <Image
+                priority
+                src="/image3.png"
+                width={150}
+                height={100}
+                alt="image3"
+              />
+            </div>
           </div>
           <div className="gallerieBestOfLigne">
-            <h2 className="gallerieBestOfImage">Image 4</h2>
-            <h2 className="gallerieBestOfImage">Image 5</h2>
-            <h2 className="gallerieBestOfImage">Image 6</h2>
+            <div className="gallerieBestOfImage">
+              <Image
+                priority
+                src="/image4.png"
+                width={150}
+                height={100}
+                alt="image4"
+              />
+            </div>
+            <div className="gallerieBestOfImage">
+              <Image
+                priority
+                src="/image5.png"
+                width={150}
+                height={100}
+                alt="image5"
+              />
+            </div>
+            <div className="gallerieBestOfImage">
+              <Image
+                priority
+                src="/image6.png"
+                width={150}
+                height={100}
+                alt="image6"
+              />
+            </div>
           </div>
           <div className="gallerieBestOfLigne">
-            <h2 className="gallerieBestOfImage">Image 7</h2>
-            <h2 className="gallerieBestOfImage">Image 8</h2>
-            <h2 className="gallerieBestOfImage">Image 9</h2>
+            <div className="gallerieBestOfImage">
+              <Image
+                priority
+                src="/image7.png"
+                width={150}
+                height={100}
+                alt="image7"
+              />
+            </div>
+            <div className="gallerieBestOfImage">
+              <Image
+                priority
+                src="/image8.png"
+                width={150}
+                height={100}
+                alt="image8"
+              />
+            </div>
+            <div className="gallerieBestOfImage">
+              <Image
+                priority
+                src="/image9.png"
+                width={150}
+                height={100}
+                alt="image9"
+              />
+            </div>
           </div>
         </div>
       </main>
