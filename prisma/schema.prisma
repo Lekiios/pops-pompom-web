@@ -16,4 +16,7 @@ model pompom_users {
   lastName      String
   email         String @unique
   password      String
+  class         String?
+  old           Int?
+  description   String?
 }

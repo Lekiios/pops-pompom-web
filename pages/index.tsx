@@ -7,7 +7,7 @@ import { getUserData } from "../lib/dbUtils";
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout underConstruct>
       <Flex
         justify={"center"}
         align={"center"}

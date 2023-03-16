@@ -17,7 +17,7 @@ export default function GallerieEvenement() {
     "RDD 2023, sur Free From fait l'avion"
   );
   return (
-    <Layout>
+    <Layout underConstruct>
       <main className="gallerieEvenementMain">
         <div className="gallerieEvenementGauche">
           <h1 className="gallerieEvenementGaucheTitre">{nom}</h1>

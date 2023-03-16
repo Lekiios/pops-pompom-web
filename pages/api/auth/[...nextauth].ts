@@ -2,6 +2,9 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { User } from "../../../models/UserModel";
 import { getUserData } from "../../../lib/dbUtils";
+import { Simulate } from "react-dom/test-utils";
+import error = Simulate.error;
+import bcrypt from "bcrypt";
 export const authOptions: NextAuthOptions = {
   session: { strategy: "jwt" },
 
@@ -16,8 +19,14 @@ export const authOptions: NextAuthOptions = {
         };
 
         const user: User = await getUserData(email);
-        if (user.password !== password) {
-          return null;
+
+        if (!user) {
+          throw new Error("Invalid Email or Password!");
+        }
+        const isPasswordOk = await bcrypt.compare(password, user.password);
+
+        if (!isPasswordOk) {
+          throw new Error("Invalid Email or Password!");
         }
 
         return {
@@ -28,9 +37,6 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-  pages: {
-    signIn: `${process.env.BASE_URL}/auth/signin`,
-  },
 };
 
 export default NextAuth(authOptions);
