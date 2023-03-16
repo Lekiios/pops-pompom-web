@@ -291,6 +291,63 @@ body,
 
 /*///////////////*/
 
+.musiqueMain {
+  margin-top: 5%;
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 100%;
+  display: flex;
+}
+
+.musiqueListe {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.musiqueListeObjet {
+  display: flex;
+  flex-direction: column;
+}
+
+.musiqueListeObjetTitre {
+  flex: 3;
+}
+
+.musiqueListeObjetInfo {
+  flex: 2;
+  display: flex;
+}
+
+.musiqueListeObjetInfoPersonne {
+  flex: 1;
+}
+
+.musiqueListeObjetInfoDate {
+  margin-left: 2%;
+  flex: 1;
+}
+
+.musiqueListeObjetInfoVote {
+  flex: 1;
+}
+
+.musiqueListeObjetDescription {
+  flex: 1;
+}
+
+.musiqueDroite {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+/*///////////////*/
+
+/*///////////////*/
+
+/*///////////////*/
+
 html,
 body {
   padding: 0;
@@ -311,4 +368,3 @@ navbarButtons {
   display: flex;
   justify-content: space-evenly;
 }
-
