@@ -62,6 +62,7 @@ export default function Home() {
       </Head>
       <div className="accueilMain">
         <div className="accueilListe">
+          <h3>Evènements à venir :</h3>
           {listeEvenements.map((item: IEvenementProps, key) => (
             <Link href="./evenement">
               <Flex key={key} className="accueilListeObjet">
@@ -99,7 +100,7 @@ export default function Home() {
                     src={"/facebook_logo.png"}
                     width={60}
                     height={60}
-                    alt="faceookLogo"
+                    alt="facebookLogo"
                   />
                 </Link>
               </div>
@@ -109,7 +110,7 @@ export default function Home() {
                     className="accueilImageReseaux"
                     priority
                     src={"/you_tube_logo.png"}
-                    width={170}
+                    width={220}
                     height={60}
                     alt="youTubeLogo"
                   />
