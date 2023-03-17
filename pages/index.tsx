@@ -62,10 +62,10 @@ export default function Home() {
       </Head>
       <div className="accueilMain">
         <div className="accueilListe">
-          <h3>Evènements à venir :</h3>
+          <h2>Evènements à venir :</h2>
           {listeEvenements.map((item: IEvenementProps, key) => (
-            <Link href="./evenement">
-              <Flex key={key} className="accueilListeObjet">
+            <Link key={key} href={"/evenement"}>
+              <Flex className="accueilListeObjet">
                 <div className="accueilListeObjetNom">
                   <h4>{item.nom}</h4>
                 </div>
@@ -129,31 +129,36 @@ export default function Home() {
           </div>
           <div className="accueilDroiteBas">
             <div className="accueilDroiteBasEvenementsPasses">
-              {listeEvenementsPasses.map(
-                (item: IEvenementsPassesProps, key) => (
-                  <Flex
-                    key={key}
-                    className="accueilDroiteBasEvenementsPassesObjet"
-                  >
-                    <Image
-                      priority
-                      src={item.image}
-                      width={220}
-                      height={160}
-                      alt={item.alt}
-                    />
-                    <div className="accueilDroiteBasEvenementsPassesObjetNom">
-                      {item.nom}
-                    </div>
-                    <div className="accueilDroiteBasEvenementsPassesObjetDate">
-                      Le {item.date}
-                    </div>
-                    <div className="accueilDroiteBasEvenementsPassesObjetLieu">
-                      à {item.lieu}
-                    </div>
-                  </Flex>
-                )
-              )}
+              <Flex direction={"column"}>
+                <h2>Evènements passés :</h2>
+                <Flex className="accueilDroiteBasEvenementsPasses">
+                  {listeEvenementsPasses.map(
+                    (item: IEvenementsPassesProps, key) => (
+                      <Flex
+                        key={key}
+                        className="accueilDroiteBasEvenementsPassesObjet"
+                      >
+                        <Image
+                          priority
+                          src={item.image}
+                          width={220}
+                          height={160}
+                          alt={item.alt}
+                        />
+                        <div className="accueilDroiteBasEvenementsPassesObjetNom">
+                          {item.nom}
+                        </div>
+                        <div className="accueilDroiteBasEvenementsPassesObjetDate">
+                          Le {item.date}
+                        </div>
+                        <div className="accueilDroiteBasEvenementsPassesObjetLieu">
+                          à {item.lieu}
+                        </div>
+                      </Flex>
+                    )
+                  )}
+                </Flex>
+              </Flex>
             </div>
             <div className="accueilDroiteBasVideos">
               {listeVideos.map((item: IVideoProps, key) => (

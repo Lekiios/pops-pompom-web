@@ -144,8 +144,8 @@ body,
 
 .evenementMain {
   margin-top: 5%;
-  margin-right: 5%;
-  margin-left: 5%;
+  padding-inline: 5%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -225,8 +225,7 @@ body,
 
 .evenementsMain {
   margin-top: 5%;
-  margin-right: 5%;
-  margin-left: 5%;
+  padding-inline: 5%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -292,8 +291,7 @@ body,
 
 .accueilMain {
   margin-top: 5%;
-  margin-right: 5%;
-  margin-left: 5%;
+  padding-inline: 5%;
   width: 100%;
   display: flex;
 }
@@ -411,8 +409,7 @@ body,
 
 .gallerieEvenementMain {
   margin-top: 5%;
-  margin-right: 5%;
-  margin-left: 5%;
+  padding-inline: 5%;
   width: 100%;
   display: flex;
 }
@@ -442,8 +439,7 @@ body,
 
 .musiqueMain {
   margin-top: 5%;
-  margin-right: 5%;
-  margin-left: 5%;
+  padding-inline: 5%;
   width: 100%;
   display: flex;
 }

@@ -1,16 +1,10 @@
-import Head from "next/head";
 import { Layout } from "../../components/Layout";
 import React, { CSSProperties, ReactNode, useEffect, useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { Router, useRouter } from "next/router";
-import {
-  Avatar,
-  Button,
-  Flex,
-  Loader,
-  LoadingOverlay,
-  Paper,
-} from "@mantine/core";
+import { Button, Flex, Loader, Paper, SpacingValue } from "@mantine/core";
+import { Property } from "csstype";
+import { IconLogout } from "@tabler/icons-react";
 export interface StyleSheet {
   [key: string]: CSSProperties;
 }
@@ -22,7 +16,15 @@ export const style: StyleSheet = {
   },
 };
 
-const FlexPaper = ({ children }: { children?: ReactNode }) => {
+const FlexPaper = ({
+  children,
+  direction,
+  gap,
+}: {
+  children?: ReactNode;
+  direction?: Property.FlexDirection;
+  gap?: SpacingValue;
+}) => {
   return (
     <Paper
       shadow="xl"
@@ -40,6 +42,8 @@ const FlexPaper = ({ children }: { children?: ReactNode }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        flexDirection: direction,
+        gap: gap,
       }}
     >
       {children}
@@ -54,6 +58,7 @@ export default function Compte() {
   const [anciennete, setAnciennete] = useState<string>(
     "Je suis celui qui fait les musiques :sunglasses:"
   );
+  const [editInfos, setEditInfo] = useState<boolean>(false);
 
   const { data: session, status } = useSession();
   const router = useRouter();
@@ -85,18 +90,29 @@ export default function Compte() {
           <Flex direction={"column"} style={{ flex: 1, height: "100%" }}>
             <Flex style={{ flex: 1, padding: 30 }}>
               <FlexPaper>
-                <Button
-                  variant={"gradient"}
-                  gradient={{ from: "gray.5", to: "gray.6", deg: 90 }}
-                  onClick={() => signOut({ redirect: false })}
-                  size={"xl"}
-                >
-                  DECONNEXION
-                </Button>
+                <Button.Group orientation="vertical" style={{ gap: 20 }}>
+                  <Button
+                    variant={"gradient"}
+                    gradient={{ from: "gray.5", to: "gray.6", deg: 90 }}
+                    onClick={() => signOut({ redirect: false })}
+                    size={"xl"}
+                    rightIcon={<IconLogout />}
+                  >
+                    DECONNEXION
+                  </Button>
+                  <Button
+                    variant={"gradient"}
+                    gradient={{ from: "gray.5", to: "gray.6", deg: 90 }}
+                    onClick={() => setEditInfo(!editInfos)}
+                    size={"xl"}
+                  >
+                    MODIFIER INFOS
+                  </Button>
+                </Button.Group>
               </FlexPaper>
             </Flex>
             <Flex style={{ flex: 3, padding: 30 }}>
-              <FlexPaper></FlexPaper>
+              <FlexPaper>{editInfos ? "Je modifie mes infos" : ""}</FlexPaper>
             </Flex>
           </Flex>
         </Flex>

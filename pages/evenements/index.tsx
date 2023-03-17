@@ -1,7 +1,5 @@
-import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import styles from "../../styles/Home.module.css";
 import React, { CSSProperties } from "react";
 import { Button, Flex } from "@mantine/core";
 import Link from "next/link";
@@ -64,8 +62,8 @@ export default function Evenements() {
         <h2>Liste des évènements internes à venir</h2>
         <div className="evenementsInternesImages">
           {listeEvenementsInter.map((item: IEvenementsPassesProps, key) => (
-            <Link href="./evenement">
-              <Flex key={key} className="evenementsImagesExemple">
+            <Link href={"/evenement"} key={key}>
+              <Flex className="evenementsImagesExemple">
                 <Image
                   priority
                   src={item.image}
@@ -91,8 +89,8 @@ export default function Evenements() {
         <h2>Liste des évènements externes à venir</h2>
         <div className="evenementsExternesImages">
           {listeEvenementsExter.map((item: IEvenementsPassesProps, key) => (
-            <Link href="./evenement">
-              <Flex key={key} className="evenementsImagesExemple">
+            <Link href={"/evenement"} key={key}>
+              <Flex className="evenementsImagesExemple">
                 <Image
                   priority
                   src={item.image}
@@ -118,8 +116,8 @@ export default function Evenements() {
         <h2>Liste des évènements passés</h2>
         <div className="evenementsPassesImages">
           {listeEvenementsPasses.map((item: IEvenementsPassesProps, key) => (
-            <Link href="./evenement">
-              <Flex key={key} className="evenementsImagesExemple">
+            <Link href={"/evenement"} key={key}>
+              <Flex className="evenementsImagesExemple">
                 <Image
                   priority
                   src={item.image}

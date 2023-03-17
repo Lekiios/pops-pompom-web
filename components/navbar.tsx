@@ -7,6 +7,9 @@ import {
   IconCalendarEvent,
   IconPhoto,
   IconMusic,
+  IconLogout,
+  IconLogin,
+  IconUser,
 } from "@tabler/icons-react";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -142,6 +145,7 @@ export default function Navbar() {
               variant={"gradient"}
               gradient={{ from: "gray.6", to: "gray.5", deg: 90 }}
               size={"md"}
+              leftIcon={<IconUser />}
             >
               <Link href="/compte">COMPTE</Link>
             </Button>
@@ -151,6 +155,7 @@ export default function Navbar() {
                 gradient={{ from: "gray.5", to: "gray.6", deg: 90 }}
                 onClick={() => signOut({ redirect: false })}
                 size={"md"}
+                rightIcon={<IconLogout />}
               >
                 DECONNEXION
               </Button>
@@ -163,6 +168,7 @@ export default function Navbar() {
             variant={"gradient"}
             gradient={{ from: "gray.5", to: "gray.6", deg: 90 }}
             size={"md"}
+            leftIcon={<IconLogin />}
           >
             <Link href={"/auth/signin"}>CONNEXION</Link>
           </Button>
